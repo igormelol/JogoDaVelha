@@ -1,4 +1,4 @@
-# Jogo da Velha Legal
+# Jogo da Velha
 
 **O que é:** Um jogo clássico de marcar três símbolos em linha.
 
