@@ -1,0 +1,154 @@
+/* Aqui eu posso declarar variáveis. */
+:root{
+    --color-primary:rgb(129, 40, 110);
+    --color-secundary:rgb(145, 108, 153);
+    --color-geral: #121214;
+    --font-color: rgb(216, 216, 211);
+}
+
+/* Aqui estou zerando o CSS do navegador */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* meu container principal */
+.container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 20vh 20vh 20vh 20vh calc(20vh - 20px);
+    background-color: var(--color-geral);
+    color: var(--font-color);
+
+    grid-template-areas:  "h  h  h"
+                          "v1 v2 v3"
+                          "v4 v5 v6"
+                          "v7 v8 v9"
+                          "f  f  f";
+    grid-gap:5px;
+    justify-content: center;
+    align-content: center;
+}
+/* topo principal */
+header {
+    grid-area: h;
+    display: grid;
+    grid-gap: 10px;
+    justify-content: start;
+    align-content: center;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+/* rodapé */
+footer{
+    grid-area: f;
+    text-align: center;
+    font-size: 10px;
+    margin-top: 70px;
+}
+/* dentro de cada quadrado - JOGO INICIADO */
+.container > div {
+    background-color: var(--color-primary);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    font-size: 100px;
+    font-weight: 600;
+}
+.container > div:hover{
+    background-color: var(--color-secundary);
+    cursor: pointer;
+    
+}
+
+/*  CSS especifico */
+
+/* caixas de seleção e botão*/
+.opcoes-jogo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "hgx bg" "hgo bg";
+    justify-content: center;
+    align-content: center;
+    margin-left: 40px;
+}
+/* cada caixa de seleção */
+.header-group #usuario-x{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    grid-area: hgx;
+    border-radius: 10px;
+}
+.header-group #usuario-o{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    grid-area: hgo;
+    border-radius: 10px;
+}
+/* Botão INICIAR */
+#btn-jogar{
+    grid-area: bg;
+    width: 120px;
+    height: 120px;
+    align-self: center;
+    justify-self: end;
+    background-color: var(--color-primary);
+    border:0;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--font-color);
+    border-radius:60px;
+    margin-right: 80px;
+    margin-top: 10px;
+}
+#btn-jogar:hover{
+    background-color: var(--color-secundary);
+    cursor: pointer;
+}
+/* escrita jogador base 1 e 2 */
+.header-group > label {
+    font-size: 20px;
+    margin-left: 100px;
+}
+/* caixa de seleção */
+.header-group > input {
+    padding: 2px;
+    text-transform: capitalize;
+    text-align-last: center;
+    background-color: transparent;
+    border: 2px solid  var(--color-primary);
+    color: var(--font-color);
+    font-size: 20px;
+    margin-top: 1px;
+    margin-left: 80px;
+}
+/* painel geral*/
+.painel-group{
+    font-size: 25px;
+    padding-top: 10px;
+}
+/* posição pontos */
+.pontos{
+    margin-left:300px;
+    float: right;
+    font-size: 25px;
+}
+/* placar pontos literalmente */
+.pontos > strong {
+    font-size: 20px;
+}
+/* frase proximo a jogar */
+.proximo-jogar{
+    margin-top: -10px;
+    font-size: 25px;
+    margin-left: 200px;
+}
+.esconder{
+    display: none;
+}
+
